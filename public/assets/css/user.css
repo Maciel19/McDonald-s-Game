@@ -1,0 +1,145 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100;1,300;1,400&family=Poppins:ital,wght@0,500;1,200;1,400;1,500&family=Press+Start+2P&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #395c9d;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-group {
+    display: flex;
+    position: relative;
+}
+  form{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+main{
+    margin: auto;
+    width: 100%;
+
+}
+.d-flex{
+    display: flex;
+}
+.m-auto{
+    margin: auto;
+    position: relative;
+}
+input{
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+
+}
+
+label{
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.input:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #1a73e8;
+}
+.input:focus ~ label, input:valid ~ label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #212121;
+    padding: 0 .2em;
+    color: #2196f3;
+}
+input[type="text"], .button {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.button{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    outline: 2px solid #ffffff;
+    padding: 15px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.button:hover{
+    color: black;
+    cursor: pointer;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: width 1s;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+.button:hover::before{
+    width: 150%;
+}
+
+
+img {
+    position: relative;
+    width: 100px;
+    margin: auto;
+}
+.logo-img{
+    display: block;
+
+}
+.logo-img-cell{
+    display: none;
+
+}
+
+@media (max-width: 728px){
+ input {
+     width: 100%;
+ }
+    .input-group{
+        flex-wrap: wrap;
+    }
+    button{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .logo-img{
+        display: none;
+
+    }
+    .logo-img-cell{
+        display: block;
+        position: absolute;
+        bottom: 0;
+
+    }
+
+}
+
+
+
+

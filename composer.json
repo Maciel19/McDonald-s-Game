@@ -1,0 +1,20 @@
+{
+  "name": "caique/mcdonaldstrivalgame",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Caiqu",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "ext-mysqli": "*"
+  }
+}
