@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Config\DB;
 use App\Model\User;
 
 class MainController
@@ -19,15 +20,13 @@ class MainController
             exit();
         }
 
-        require "templates/User.html";
+        require "../templates/User.html";
     }
     public function game(): void{
-        require "templates/game.php";
+        require "../templates/game.php";
     }
 
     public function finish():void{
-        $mysqli = mysqli_connect("127.0.0.1","root",null,"mcdonalds_trival_game");
-
         if($_SERVER['REQUEST_METHOD'] === "POST"){
             $points = $_REQUEST ['points'];
 
@@ -35,13 +34,10 @@ class MainController
              * @var User $user
              */
             $user = unserialize($_SESSION['user']);
-
             $user->setNumber($points);
 
-            if (!empty($mysqli)) {
-                // TODO: Improve security
-                mysqli_query($mysqli,"INSERT INTO user (name, point) VALUES ('" . $user->getName() . "', ". $user->getNumber() . ")");
-            }
+            // TODO: Improve security
+            mysqli_query(DB::mysqli(),"INSERT INTO user (name, point) VALUES ('" . $user->getName() . "', ". $user->getNumber() . ")");
 
             $_SESSION ['finish'] = true;
         }
