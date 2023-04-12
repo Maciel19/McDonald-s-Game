@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>McQuiz</title>
-  <link rel="stylesheet" href="../public/assets/css/game.css">
+  <link rel="stylesheet" href="/assets/css/game.css">
 </head>
 <body>
 
@@ -19,12 +19,12 @@
     <div class="finish" <?php if (($_SESSION['finish'] ?? false)) { ?>style="display: flex;"<?php } ?>>
       <span>Parabens você concluiu o Quiz</span>
     </div>
-    <img src="../img/McDonalds-Logo-2006_presente-removebg-preview.png" alt="" class="logo-img">
+    <img src="/assets/img/McDonalds-Logo-2006_presente-removebg-preview.png" alt="" class="logo-img">
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <?php if (($_SESSION['finish'] ?? false) === false) { ?>
-  <script src="../public/assets/js/script.js" type="module"></script>
+  <script src="/assets/js/script.js" type="module"></script>
   <?php } ?>
 </body>
 </html>
