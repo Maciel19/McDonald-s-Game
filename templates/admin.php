@@ -7,7 +7,7 @@ use App\Model\User;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../public/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <title>Admin</title>
 </head>
 <body class="container">

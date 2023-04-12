@@ -1,8 +1,9 @@
 <?php
 
+use App\Controller\AdminController;
 use App\Controller\MainController;
-require "vendor/autoload.php";
-require "config.php";
+
+require "../vendor/autoload.php";
 
 @ob_start();
 session_start();
@@ -13,23 +14,18 @@ if (($_GET['clear'] ?? false) == true) {
     header("Location: /");
 }
 
-if($_SERVER['REQUEST_URI']=='/admin'){
-
-    $adminController = new \App\Controller\AdminController();
-
-    $adminController->amdmin();
-
-} else if ($_SERVER['REQUEST_URI']=='/finish'){
+if ($_SERVER['REQUEST_URI'] == '/admin') {
+    $adminController = new AdminController();
+    $adminController->admin();
+} else if ($_SERVER['REQUEST_URI'] == '/finish') {
     $mainController = new MainController();
-    $mainController ->finish();
-} else{
+    $mainController->finish();
+} else {
     $mainController = new MainController();
-    if (empty($_SESSION['user'] ?? null)){
+    if (empty($_SESSION['user'] ?? null)) {
         $mainController->identifier();
-    } else{
+    } else {
         $mainController->game();
     }
-
-
 }
 
