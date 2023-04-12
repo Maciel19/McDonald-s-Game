@@ -49,7 +49,7 @@ export default [
 ],
 },
     {
-        question: "EM QUANRO TEMPO LAVAMOS AS MÃOS?",
+        question: "EM QUANTO TEMPO LAVAMOS AS MÃOS?",
         answers: [
             { option: "60min", correct: true },
             { option: "45min", correct: false },
